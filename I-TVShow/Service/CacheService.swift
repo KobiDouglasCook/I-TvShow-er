@@ -8,12 +8,7 @@
 
 import UIKit
 
-enum NewsError: Error {
-    case noData
-    case badObject
-}
-
-typealias ImageHandler = (Result<UIImage?,NewsError>) -> Void
+typealias ImageHandler = (Result<UIImage?,ServiceErrors>) -> Void
 let sharedCacheService = CacheService.shared
 
 final class CacheService {
@@ -30,14 +25,16 @@ final class CacheService {
     func download(from endpoint: String, completion: @escaping ImageHandler) {
         
         //1. check if image exists in cache
-        if let newsData = cache.object(forKey: endpoint as NSString) {
-            let image = UIImage(data: newsData as Data)
-            completion(.success(image))
+        if let data = cache.object(forKey: endpoint as NSString) {
+            let image = UIImage(data: data as Data)
+            DispatchQueue.main.async {
+                completion(.success(image))
+            }
             return
         }
         
         guard let url = URL(string: endpoint) else {
-            completion(.failure(NewsError.noData))
+            completion(.failure(ServiceErrors.badData("bad endpoint")))
             return
         }
         

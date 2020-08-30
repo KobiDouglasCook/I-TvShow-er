@@ -21,6 +21,8 @@ class SearchViewController: UIViewController {
             
             tableView.backgroundColor = UIColor.white
             
+            tableView.estimatedRowHeight = 300
+            
         }
     }
     
@@ -74,7 +76,7 @@ extension SearchViewController: UITableViewDataSource {
 extension SearchViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
+        return tableView.frame.height
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
