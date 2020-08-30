@@ -25,6 +25,8 @@
 		742ECE8824FB012D008AF8C6 /* ViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742ECE8724FB012D008AF8C6 /* ViewController+Extension.swift */; };
 		742ECE8A24FB0271008AF8C6 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742ECE8924FB0271008AF8C6 /* Int+Extension.swift */; };
 		742ECE9224FB0504008AF8C6 /* I_TVShowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742ECE9124FB0504008AF8C6 /* I_TVShowTests.swift */; };
+		74B7977124FB241F00D229AA /* NoShowView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74B7977024FB241F00D229AA /* NoShowView.xib */; };
+		74B7977324FB242D00D229AA /* NoShowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B7977224FB242D00D229AA /* NoShowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,8 @@
 		742ECE8F24FB0504008AF8C6 /* I-TVShowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "I-TVShowTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		742ECE9124FB0504008AF8C6 /* I_TVShowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = I_TVShowTests.swift; sourceTree = "<group>"; };
 		742ECE9324FB0504008AF8C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74B7977024FB241F00D229AA /* NoShowView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoShowView.xib; sourceTree = "<group>"; };
+		74B7977224FB242D00D229AA /* NoShowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoShowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +132,8 @@
 			children = (
 				742ECE7B24FAEBF3008AF8C6 /* ShowCell.swift */,
 				742ECE7C24FAEBF3008AF8C6 /* ShowCell.xib */,
+				74B7977224FB242D00D229AA /* NoShowView.swift */,
+				74B7977024FB241F00D229AA /* NoShowView.xib */,
 				742ECE5D24FAE17C008AF8C6 /* Assets.xcassets */,
 			);
 			path = View;
@@ -272,6 +278,7 @@
 				742ECE6124FAE17C008AF8C6 /* LaunchScreen.storyboard in Resources */,
 				742ECE5E24FAE17C008AF8C6 /* Assets.xcassets in Resources */,
 				742ECE7E24FAEBF3008AF8C6 /* ShowCell.xib in Resources */,
+				74B7977124FB241F00D229AA /* NoShowView.xib in Resources */,
 				742ECE5C24FAE17C008AF8C6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,6 +303,7 @@
 				742ECE7324FAE2D9008AF8C6 /* TvService.swift in Sources */,
 				742ECE6E24FAE2B1008AF8C6 /* SearchViewController.swift in Sources */,
 				742ECE8024FAEF5A008AF8C6 /* CacheService.swift in Sources */,
+				74B7977324FB242D00D229AA /* NoShowView.swift in Sources */,
 				742ECE7124FAE2D1008AF8C6 /* TvApi.swift in Sources */,
 				742ECE5724FAE17C008AF8C6 /* SceneDelegate.swift in Sources */,
 				742ECE8A24FB0271008AF8C6 /* Int+Extension.swift in Sources */,

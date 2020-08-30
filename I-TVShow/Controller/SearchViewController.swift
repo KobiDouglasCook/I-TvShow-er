@@ -20,12 +20,17 @@ class SearchViewController: UIViewController {
             tableView.separatorStyle = .none //remove the dividing lines
             
             tableView.backgroundColor = UIColor.white
+            
         }
     }
     
     //MARK: Properties
     let viewModel = ViewModel()
     let searchController = UISearchController(searchResultsController: nil)
+    
+    var noShowView: NoShowView? {
+        return viewModel.show == nil ? NoShowView().getInstance() : nil
+    }
     
     //MARK: Life Cycle
     override func viewDidLoad() {
@@ -35,11 +40,17 @@ class SearchViewController: UIViewController {
   
     //MARK: Functionality
     private func setup() {
-         viewModel.delegate = self
+        viewModel.delegate = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.delegate = self
         navigationItem.hidesSearchBarWhenScrolling = false
         navigationItem.searchController = searchController
+        setBackgroundView()
+    }
+    
+    
+    private func setBackgroundView() {
+        tableView.backgroundView = noShowView
     }
 
 }
@@ -77,6 +88,7 @@ extension SearchViewController: ShowDelegate {
     func update() {
         DispatchQueue.main.async {
             self.tableView.reloadData()
+            self.setBackgroundView()
             if (self.viewModel.show == nil) {
                 self.showAlert(title: "Show Not Found", message: "oops, looks like we don't know about that one! Try and search for a different show.")
             }
@@ -90,6 +102,7 @@ extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let search = searchBar.text,
             let sanitized = search.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else { return }
+        searchBar.text = ""
         viewModel.getShow(called: sanitized)
     }
 }
